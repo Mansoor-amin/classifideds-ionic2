@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card>
+  
+    <ion-card-header>
+      Login to Your Account
+    </ion-card-header>
+  
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+        <ion-list>
+
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" autofocus formControlName="email"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3>
+                  <button ion-button full type="submit">Login</button>
+                </ion-col>
+                <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3>
+                  <button ion-button full (click)="gotoSignUp()">Create Account</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  
+  </ion-card>
+  
+  
+
+</ion-content>

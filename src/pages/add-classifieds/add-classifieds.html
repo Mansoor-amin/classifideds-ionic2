@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar  color="secondary">
+    <ion-title>add_classifieds</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-card>
+  
+    <ion-card-header>
+      Create Classified
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <form [formGroup]="classifiedForm" (ngSubmit)="createClassified($event)">
+        <ion-list>
+
+          <ion-item>
+            <ion-label floating>Heading</ion-label>
+            <ion-input type="text" autofocus formControlName="heading"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Heading</ion-label>
+            <textarea rows="" cols="" id="discription"  formControlName="discription" type="text" name="discription" class="materialize-textarea validate"></textarea>
+            <ion-input type="" autofocus formControlName="discription"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3>
+                  <button ion-button full type="submit">Login</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>

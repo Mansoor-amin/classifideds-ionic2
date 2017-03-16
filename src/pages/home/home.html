@@ -1,0 +1,72 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-item-divider color="light"></ion-item-divider>
+    <ion-toolbar>
+      <ion-title center>
+    
+          <ion-card>
+            <ion-item>
+              <ion-avatar item-left>
+                <ion-icon name="md-person"></ion-icon>
+              </ion-avatar>
+              <h2>{{user.fName + ' ' + user.lName}}</h2>
+              <p>{{user.contact}}</p>
+              <p>{{user.email}}</p>
+            </ion-item>
+          </ion-card>
+        
+      </ion-title>
+    </ion-toolbar>
+    <ion-item-divider color="light"></ion-item-divider>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <ion-item>
+        <button ion-button color="dark" clear full menuToggle>Home</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="dark" clear full (click)="navigateToMyCar()">My Cart</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="dark" clear full (click)="navigateToWishlist()">Wishlist</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="dark" clear full (click)="navigateToAbout()">About</button>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+
+</ion-menu>
+
+<ion-header>
+  <ion-navbar hideBackButton="true" #content swipeBackEnabled="true" color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Classifieds
+    </ion-title>
+     <ion-buttons end>
+      <button ion-button icon-only (click)="navigateToAddClassified()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  The world is your oyster.
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+
+  <ion-list>
+  <ion-item class="text" *ngFor="let item of items | async">
+    {{item.$value}}
+  </ion-item>
+  </ion-list>
+</ion-content>
+
